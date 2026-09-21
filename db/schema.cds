@@ -1,15 +1,18 @@
 namespace rpe5.db; // Name space creation
 
 //Aspects
-using {cuid, managed}from '@sap/cds/common';
+using {
+    cuid,
+    managed
+} from '@sap/cds/common';
 
 //Custom-aspect
 aspect customAspect {
-    status: String
+    status : String
 }
 
 //Type
-type nameType: String(50);
+type nameType : String(50);
 
 
 //Create Table - Table names are in plural
@@ -28,30 +31,43 @@ entity Students  {
 */
 
 //NEW ASPECTED WAY
-entity Students: cuid  {
+entity Students : cuid {
     //key studentID: UUID;
-    name: nameType; //Instead of declaring the type it comes from nametype
-    address: String;
-    email: String(100);
-    mobile: String(10);
-    age: Integer;
-    gender: String(1);
+    name    : nameType; //Instead of declaring the type it comes from nametype
+    address : String;
+    email   : String(100);
+    mobile  : String(10);
+    age     : Integer;
+    gender  : String(1);
+//courses: Composition of many Courses;
 }
 
 
-
-entity Courses: cuid, managed {
+entity Courses : cuid, managed {
     //key courseID: UUID;
-    name: String(100);
-    cost: Decimal(10,2);
-    duration: Integer;
-    trainerCode: String(10);
+    name        : String(100);
+    cost        : Decimal(10, 2);
+    duration    : Integer;
+    trainerCode : String(10);
 }
 
-entity Addresses  {
-    key addressID: Integer;
-    description: String(100);
-    city: String(100);
-    country: String(100);
-    postal: String(100);
+entity Addresses {
+    key addressID   : Integer;
+        description : String(100);
+        city        : String(100);
+        country     : String(100);
+        postal      : String(100);
+}
+
+entity Books : cuid {
+    name        : String;
+    title       : String;
+    publishDate : String;
+    author      : Association to Authors; //one  - keyword skipped means one to one // managed association
+}
+
+entity Authors : cuid {
+    name  : String;
+    books : Composition of many Books
+                on books.author = $self;
 }

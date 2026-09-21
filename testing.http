@@ -29,3 +29,24 @@ Content-Type: application/json
 ### Delete Data
 
 DELETE http://localhost:4004/odata/v4/student-api/StudentData('f5c29506-f335-6178-f76a-4af9786faf03')
+
+### Composition
+
+POST http://localhost:4004/odata/v4/student-api/Authors
+Content-Type: application/json
+
+{
+    "name" : "Dan Brown",
+    "books" : [
+        {
+            "name": "",
+            "title":"Origin",
+            "publishDate":"2005"
+        },
+        {
+            "name": "",
+            "title":"Da Vinci Code",
+            "publishDate":"2008"
+        }
+    ]
+}
