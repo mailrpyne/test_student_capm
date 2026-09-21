@@ -1,0 +1,7 @@
+ID,name,address,email,mobile,age,gender
+d3b07384-d113-4956-d54e-28f7564d8a01,John Doe,123 Magnolia Lane,john.doe@example.com,9876543210,21,M
+e4a18495-e224-5067-e65f-39f8675e9b02,Jane Smith,456 Oak Avenue,jane.smith@example.com,8765432109,20,F
+a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d,Alex Jones,789 Pine Road,alex.jones@example.com,7654321098,22,O
+f5c29506-f335-6178-f76a-4af9786faf03,Emily Brown,321 Cedar Street,emily.brown@example.com,6543210987,19,F
+b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e,Michael Green,654 Birch Court,michael.green@example.com,5432109876,23,M
+
