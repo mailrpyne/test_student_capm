@@ -47,3 +47,11 @@ entity Courses: cuid, managed {
     duration: Integer;
     trainerCode: String(10);
 }
+
+entity Addresses  {
+    key addressID: Integer;
+    description: String(100);
+    city: String(100);
+    country: String(100);
+    postal: String(100);
+}
